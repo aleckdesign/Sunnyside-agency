@@ -1,0 +1,70 @@
+@use 'abstracts/variables' as *;
+
+.header {
+  min-height: 80vh;
+  grid-column: 1 / -1;
+  background-image: url(/images/desktop/image-header.jpg);
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #3ebfff;
+
+  display: grid;
+  grid-template-rows: min-content 60% 1fr;
+
+  @media only screen and (max-width: 800px) {
+    min-height: 60vh;
+  }
+
+  &__top {
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 3rem;
+    right: 2.5rem;
+    z-index: 9999;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    display: none;
+
+    @media only screen and (max-width: 600px) {
+      display: initial;
+    }
+  }
+
+  &__logo {
+    grid-row: 1/2;
+    height: 4rem;
+
+    @media only screen and (max-width: 800px) {
+      height: 2rem;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // margin-top: 5rem;
+    text-align: center;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__img {
+    margin-top: 5rem;
+    height: 8rem;
+  }
+}

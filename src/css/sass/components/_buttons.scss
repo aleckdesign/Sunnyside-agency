@@ -1,0 +1,67 @@
+@use 'abstracts/variables' as *;
+
+.btn-nav {
+  color: black !important;
+  text-transform: uppercase;
+  background-color: $clr-white;
+  border-radius: 5rem;
+  padding: 1.5rem 2rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  @media only screen and (max-width: 600px) {
+    background-color: $clr-primary-yellow;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  &:hover {
+    background-color: rgba($clr-white, 0.5);
+    color: $clr-white !important;
+
+    @media only screen and (max-width: 600px) {
+      background-color: $clr-primary-yellow;
+    }
+  }
+}
+
+.panel-text__btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  width: max-content;
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-family: "Fraunces", serif;
+  color: $clr-neutral-desat-dark-blue;
+  background-color: transparent;
+  position: relative;
+
+  &::after {
+    content: "";
+    height: 1rem;
+    width: 110%;
+    left: -5px;
+    bottom: -3px;
+    border-radius: 2rem;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &--yellow {
+    &::after {
+      background-color: $clr-primary-yellow;
+    }
+  }
+  &--red {
+    &::after {
+      background-color: $clr-primary-red;
+    }
+  }
+}

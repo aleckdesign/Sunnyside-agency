@@ -1,0 +1,59 @@
+@use 'abstracts/variables' as *;
+
+.nav {
+  @media only screen and (max-width: 600px) {
+    background-color: #fff;
+    padding: 4rem;
+    height: 28rem;
+    width: 90%;
+    position: fixed;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 999;
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border: 1.8rem solid transparent;
+      border-bottom-color: #fff;
+      border-right-color: #fff;
+      position: absolute;
+      top: -3.5rem;
+      right: 0;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    font-size: 1.6rem;
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $clr-white;
+
+    @media only screen and (max-width: 600px) {
+      color: $clr-neutral-grey-blue;
+    }
+
+    &:hover {
+      border-bottom: 2px solid #fff;
+    }
+  }
+}
+
+.open {
+  display: initial;
+}
